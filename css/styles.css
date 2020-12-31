@@ -1,0 +1,642 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+ 
+body{
+    min-height: 700px;
+}
+
+p{
+    font-weight: 300;
+    color: #111;
+}
+/*HEADER*/
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+
+
+
+header .logo{
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+header .logo span{
+    color: #ff0157;
+}
+
+header .navigation{
+    position: relative;
+    display: flex;
+}
+
+header .navigation li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+header .navigation li a{
+   text-decoration: none;
+   color: #fff;
+   font-weight: 300;
+} 
+
+
+header .navigation li a:hover{
+    border: 2px solid #ff0157;
+    border-radius: 100px;
+    padding: .7rem;
+}
+
+.effet{
+    background-color: #ff0157;
+    border-radius: 100px;
+    padding: .5rem;
+    color: #111;
+}
+
+
+
+/*EFFET JS SUR LE HEADER*/
+header.sticky{
+    background-color: #fff;
+    padding: 10px 100px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+header.sticky .logo{
+    color: #111;
+}
+
+header.sticky .navigation li a{
+    color: #111;
+}
+
+header.sticky .navigation li a:hover{
+    color:#111;
+}
+
+
+/*responsivité du header*/
+@media screen and (max-width: 900px){
+    header,
+    header.sticky{
+        padding: 10px 20px;
+    }
+
+    header .navigation{
+        display: none;
+    }
+
+    header .navigation.active{
+        width: 100%;
+        height: calc(80% - 60px);
+        position: fixed;
+        top: 60px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+    }
+
+    header .navigation li{
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    header .navigation li a{
+        text-decoration: none;
+        color: #111;
+        font-size: 1.6em;
+        font-weight: 300;
+    }   
+
+    .menuToggle{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url(/img/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    .menuToggle.active{
+        background: url(/img/close.png);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    header.sticky .menuToggle{
+        filter: invert(1);
+    }
+}
+
+
+/*BANNER*/
+
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(/img/bg2.jpg);
+    background-size: cover;  
+}
+
+.banner .content{
+    max-width: 900px;
+    text-align: center;
+}
+
+.banner h2{
+    font-size: 4em;
+    color: #fff;
+}
+
+.banner p{
+    font-size: 1em;
+    color: #fff;
+}
+
+.btn{
+    font-size: 1em;
+    color: #fff;
+    background-color: #ff0157;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    letter-spacing: 6px;
+}
+
+
+/*Responsivité banner*/
+
+@media screen and (max-width:900px){
+    section{
+        padding: 15px;
+    }
+    
+    .banner .content h2{
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width:350px){
+    section{
+        padding: 15px;
+    }
+    .banner{
+        min-height: 80vh;
+        margin-top: 5px;
+    }
+    .banner .content h2{
+        font-size: 1.3em;
+    }
+
+    .banner .content p{
+        font-size: .8em;
+        text-align: justify;
+    }
+
+    .banner .btn{
+        font-size: .6em;
+    }
+
+    .btn:hover{
+        letter-spacing: 4px;
+    }
+}
+
+/*APROPOS*/
+
+section{
+    padding: 40px;
+}
+
+.about{
+    margin-top: 40px;
+    
+}
+
+.row{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row .col50{
+    position: relative;
+    width: 48%;
+}
+
+.titreText{
+    color: #111;
+    font-size: 2em;
+}
+
+.titreText span{
+    color: #ff0157;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.row .col50 .imgBx{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.row .col50 .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*Responsivité apropos*/
+
+@media screen and (max-width: 900px){
+
+    .about{
+        margin-right: 1em;
+        margin-top: 0;
+    }
+
+    .row{
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .row .col50{
+        position: relative;
+        width: 100%;
+    }
+
+    .row .col50 .imgBx{
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    .titreText{
+       text-align: center;
+    }
+
+    .row .col50 p{
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .about{
+        margin-top: 0;
+        padding: 2em;
+        align-items: center;
+    }
+
+    .about .col50{
+        font-size: .8rem;
+    }
+}
+
+
+/*MENU*/
+.titre{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.menu .content{
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.menu .content .box{
+    width: 350px;
+    margin: 20px;
+    border: 15px solid #fff;
+    box-shadow: 0 5px 35px rgba(0,0,0,0.08);
+}
+
+.menu .content .box .imgBx{
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.menu .content .box .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.menu .content .box .text{
+    padding: 15px 0 5px;
+    text-align: center;
+}
+
+.menu .content .box .text h3{
+    font-weight: 400;
+    color: #111;
+}
+
+
+/*responsivité menu*/
+@media screen and (max-width: 480px){
+    .menu{
+        padding: .5rem;
+    }
+
+    .menu .content .box{
+        margin-top: .5rem;
+    }
+
+    .menu .content .box .imgBx{
+        height: 200px;
+       
+    }
+
+    .menu .content .box .imgBx .img{
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 320px){
+    .menu .titre{
+        font-size: .8rem;
+    }
+}
+
+
+/*client*/
+.client{
+    background: url(/img/bg2.jpg);
+    background-size: cover;
+}
+
+.white .titreText, .white p{
+    color: #fff;
+}
+
+.client .content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.client .content .box{
+    width: 340px;
+    margin: 20px;
+    padding: 40px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.client .content .box .imgBx{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.client .content .box .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.client .content .box .text{
+    text-align: justify;
+}
+
+.client .content .box .text p{
+    color: #666;
+    font-style: italic;
+}
+
+.client .content .box .text h3{
+    margin-top: 20px;
+    color: #111;
+    font-size: 1em;
+    color: #ff0157;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/*responsivité client*/
+@media screen and (max-width: 480px){
+    .client{
+        padding: .5rem;
+        margin-top: 4rem;
+    }
+
+    .client .content .box{
+        margin-top: .5rem;
+    }
+
+    .client .content .box .imgBx .img{
+        width: 80%;
+    }
+
+    .client .content .box .text{
+        font-size: .8rem;
+        padding: .2rem;
+    }
+}
+
+
+@media screen and (max-width: 320px){
+    .client .titre{
+        font-size: .8rem;
+    }
+}
+
+
+/*Contact*/
+.contact{
+    background: url(/img/bg3.jpg);
+    background-size: cover;
+    background-color: #ff0157;
+}
+
+.contactForm{
+    padding: 85px 50px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin-top: 1px;
+}
+
+.contactForm h3{
+    color: #111;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.contactForm .formInput{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contactForm .formInput input,
+.contactForm .formInput textarea{
+    width: 100%;
+    border: 1px solid #555;
+    padding: 10px;
+    color: #111;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    resize: none;
+}
+
+.contactForm .formInput input[type="submit"]{
+    font-size: 1em;
+    color: #111;
+    background: #ff0157;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    max-width: 500px;
+    border: none;
+}
+
+.formInput:hover{
+    border: 1px solid #ff0157;
+    color: #ff0157;
+}
+
+/*responsivité contact*/
+@media screen and (max-width: 480px){
+
+    .contactForm{
+        margin-top: -50px;
+    }
+    .contact{
+        padding: .5rem;
+        margin-top: 4rem;
+    }
+
+    .contact .content .box .imgBx .img{
+        width: 80%;
+    }
+
+    .contact .content .box .text{
+        font-size: .8rem;
+    }
+
+}
+
+
+@media screen and (max-width: 320px){
+    .contact .titre{
+        font-size: .8rem;
+    }
+}
+
+/*footer*/
+footer{
+    color: white;
+    background-color:black;
+    padding: 1rem;
+}
+
+footer ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+footer strong{
+    color:  #ff0157;
+}
+
+footer p{
+    margin: auto;
+    color: #fff;
+    padding-top: .8rem;
+}
+
+footer li {
+    margin: auto;
+    padding: 1rem;
+}
+
+
+
+@media screen and (max-width: 600px){
+    footer ul {
+        display: inline;
+        justify-content: left;
+        text-align: center;
+
+    }
+
+    footer li{
+        margin: 10px;
+    }
+
+}
