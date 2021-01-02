@@ -562,11 +562,6 @@ section{
     border: none;
 }
 
-.formInput:hover{
-    border: 1px solid #ff0157;
-    color: #ff0157;
-}
-
 /*responsivité contact*/
 @media screen and (max-width: 480px){
 
